@@ -65,7 +65,8 @@
               "buildTarget": "HospitalManagmentSystem:build:production"
             },
             "development": {
-              "buildTarget": "HospitalManagmentSystem:build:development"
+              "buildTarget": "HospitalManagmentSystem:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
@@ -96,5 +97,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

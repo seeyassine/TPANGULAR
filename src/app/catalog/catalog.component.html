@@ -1,0 +1,42 @@
+
+<div class="container">
+
+  <div class="filters">
+
+    <a routerLink="/catalog" [queryParams]="{filter:'phone'}" routerLinkActive="active" class="button"> Smart Phone </a>
+
+    <a routerLink="/catalog" [queryParams]="{filter:'tablet'}" routerLinkActive="active" class="button"> Tablet </a>
+
+    <a routerLink="/catalog" [queryParams]="{filter:'smarttv'}" routerLinkActive="active" class="button"> Smart TV </a>
+
+    <a routerLink="/catalog"  routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="button"> All </a>
+
+  </div>
+  
+    <ul class="products">
+      <li class="product-item" *ngFor ="let _product of getFilteredProducts()" >
+       <app-product-details [product]="_product" 
+       
+                  (buy)="addToCart(_product)" ></app-product-details>
+      </li>
+    </ul>
+  </div>
+
+<!--
+  <ul *ngFor="let product of products"
+    [ngSwitch]="product.productTitle"> (1)
+
+  <li *ngSwitchCase="'iphone'"
+      class="text-success">{{ product.productID }} ({{ product.productTitle }})
+  </li>
+  <li *ngSwitchCase="'samsung'"
+      class="text-primary">{{ product.productID }} ({{ product.productTitle }})
+  </li>
+  <li *ngSwitchCase="'smart tv'"
+      class="text-danger">{{ product.productID }} ({{ product.productTitle }})
+  </li>
+  <li *ngSwitchDefault
+      class="text-warning">{{ product.productID }} ({{ product.productTitle }})
+  </li>
+</ul>
+-->

@@ -1,0 +1,26 @@
+<div class="container">
+    <h1 class="header">Your Cart</h1>
+  
+    <div class="empty-cart" *ngIf="cartItems.length === 0">
+      You have no items in your cart
+    </div>
+    <ul class="cart" *ngIf="cartItems.length > 0">
+      <li class="cart-item" *ngFor="let product of cartItems">
+        <div class="product">
+          <div class="product-details">
+            <img [src]="getImageUrl(product)" [alt]="product.productTitle" />
+            <div class="product-info">
+              <div class="name">{{ product.productTitle }}</div>
+              <div class="description">{{ product.productTitle }}</div>
+              <div class="category">Part Type: {{ product.category }}</div>
+            </div>
+          </div>
+          <div class="price">
+            <div> {{ product.prouctPrice }} </div>
+            
+            <button (click)="removeFromCart(product)">Remove</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
